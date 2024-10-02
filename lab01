@@ -1,1 +1,36 @@
 https://enzomind.com/files/uwm/wyklady/ProjAppWeb/lab1.pdf
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Największe budynki świata">
+    <meta name="keywords" content="budynki, architektura, największe budynki">
+    <meta name="author" content="Jan Kowalski">
+    <title>Największe Budynki Świata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Największe Budynki Świata</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="podstrona1.html">Burj Khalifa</a></li>
+                <li><a href="podstrona2.html">Shanghai Tower</a></li>
+                <li><a href="podstrona3.html">Abraj Al-Bait</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Witamy na stronie o największych budynkach świata!</h2>
+        <p>Dowiedz się więcej o najwyższych i najbardziej imponujących budynkach na świecie.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jan Kowalski</p>
+    </footer>
+</body>
+</html>
