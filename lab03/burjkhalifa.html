@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Content-Language" content="pl">
+    <meta name="Author" content="Kamil Amarasekara">
+    <title>Burj Khalifa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="kolorujtlo.js" type="text/javascript"></script>
+    <script src="timedate.js" type="text/javascript"></script>
+</head>
+<body onload="startclock()">
+    <header>
+        <h1>Największe budynki świata</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="burjkhalifa.html">Burj Khalifa</a></li>
+                <li><a href="shanghaitower.html">Shanghai Tower</a></li>
+                <li><a href="abradzalbajt.html">Abradż al-Bajt</a></li>
+                <li><a href="pinganfinancecenter.html">Ping An Finance Center</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="time-date">
+            <div id="zegarek"></div>
+            <div id="data"></div>
+        </div>
+
+        <div class="background-options">
+            <INPUT TYPE="button" VALUE="Szary" ONCLICK="changeBackground('#808080')">
+            <INPUT TYPE="button" VALUE="Biały" ONCLICK="changeBackground('#FFFFFF')">
+        </div>
+    </header>
+
+    <section>
+        <h2>Burj Khalifa</h2>
+        <p>Burj Khalifa to najwyższy budynek na świecie, mierzący 829 metrów wysokości.</p>
+        
+        <div class="gallery">
+            <img src="Burj_Khalifa.jpg" class="gallery-img" id="burjkhalifa1">
+            <img src="burdz2.jpg" class="gallery-img" id="burjkhalifa2">
+            <img src="burdz3.jpg" class="gallery-img" id="burjkhalifa3">
+        </div>
+    </section>
+
+    <script>
+
+        $("#burjkhalifa1").on("click", function(){
+            $(this).animate({
+                width: "500px",
+                opacity: 0.6
+            }, 1500);
+        });
+
+        $("#burjkhalifa2").on({
+            "mouseover": function(){
+                $(this).animate({ width: "300px" }, 800);
+            },
+            "mouseout": function(){
+                $(this).animate({ width: "200px" }, 800);
+            }
+        });
+    </script>
+</body>
+</html>
