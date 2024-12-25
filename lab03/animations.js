@@ -1,47 +1,88 @@
-$(document).ready(function () {
-    const maxWidth = 500;
-    const maxClicks = 5;
-    const clickStep = 20;
+$(document).ready(function() {
+    $("#animacjaTestowal").on("click", function(){
+        $(this).animate({
+            width: "500px",
+            opacity: 0.4,
+            fontSize: "3em",
+            borderWidth: "10px"
+        }, 1500);
+    });
+    
+    $(".image-container2").on("click", function() {
+        const $image = $(this);
+        const isExpanded = $image.data("expanded");
 
-    const clickCounts = {};
-
-    function handleImageClick(imageId) {
-        const $image = $(`#${imageId}`);
-        if (!clickCounts[imageId]) clickCounts[imageId] = 0;
-
-        if (clickCounts[imageId] < maxClicks) {
-            clickCounts[imageId]++;
-            $image.stop().animate({
-                width: `+=${clickStep}px`,
-                height: `+=${clickStep}px`
-            }, 500, "swing");
+        if (isExpanded) {
+            $image.animate({
+                width: "200px",
+                opacity: 1
+            }, 1500);
         } else {
-            alert(`Obrazek osiągnął maksymalną liczbę kliknięć!`);
+            $image.animate({
+                width: "500px",
+                opacity: 0.8
+            }, 1500);
         }
-    }
+        
+        $image.data("expanded", !isExpanded);
+    });
+    
+    $(".image-container").on({
+        "mouseover": function() {
+            $(this).animate({
+                width: 300 ,
+                height: 300
+            }, 800);
+        },
+        "mouseout": function() {
+            $(this).animate({
+                width: 200,
+                height: 200
+            }, 800);
+        }
+    });
+    
+    $(".image-container2").on({
+        "mouseover": function() {
+            $(this).animate({
+                width: 300 ,
+                height: 300
+            }, 800);
+        },
+        "mouseout": function() {
+            $(this).animate({
+                width: 200,
+                height: 200
+            }, 800);
+        }
+    });
+    
+    let clickCounter = 0;
 
-    $(".gallery-img").on("click", function () {
-        handleImageClick(this.id);
+    $(".image-container").on("click", function() {
+        if (!$(this).is(":animated")) {
+            clickCounter++;
+
+            if (clickCounter < 5) {
+                $(this).animate({
+                    width: "+=20",
+                    height: "+=20",
+                    opacity: "+=0.1"
+                }, {
+                    duration: 500
+                });
+            } else {
+                $(this).animate({
+                    width: "200px",
+                    height: "200px",
+                    opacity: 1
+                }, {
+                    duration: 500
+                });
+
+                clickCounter = 0;
+            }
+        }
     });
 
-    $(".gallery-img").hover(
-        function () {
-            $(this).stop().animate({
-                width: "300px",
-                height: "auto"
-            }, {
-                duration: 1000,
-                easing: "easeOutQuad"
-            });
-        },
-        function () {
-            $(this).stop().animate({
-                width: "200px",
-                height: "auto"
-            }, {
-                duration: 1000,
-                easing: "easeOutQuad"
-            });
-        }
-    );
 });
