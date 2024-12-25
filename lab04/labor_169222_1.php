@@ -1,21 +1,36 @@
 <?php
+$nr_indeksu = "169222";
+$nrGrupy = "1";
+
+echo "Kamil Amarasekara ".$nr_indeksu." grupa ".$nrGrupy." <br /><br />";
+echo "Zastosowanie metody include() <br />";
 
 echo "a) Metoda include(), require_once():";
 echo "<br>";
 echo "Przykład użycia include()";
 echo "<br>";
-include('zad1.php');
+
+$file_to_include = 'sample_file.php'; //
+if (file_exists($file_to_include)) {
+    include($file_to_include);
+} else {
+    echo "Plik '".$file_to_include."' nie istnieje!<br>";
+}
 echo "<br>";
 
 echo "Przykład użycia require_once()";
 echo "<br>";
-require_once('zad1.php');
+if (file_exists($file_to_include)) {
+    require_once($file_to_include);
+} else {
+    echo "Plik '".$file_to_include."' nie istnieje!<br>";
+}
 echo "<br>";
 
 echo "b) Warunki if, else, elseif, switch:";
 echo "<br>";
 $ocena = 69;
-echo $ocena." punktow"; 
+echo $ocena." punktów";
 echo "<br><br>";
 if ($ocena >= 60) {
     echo "Zdane";
@@ -36,21 +51,22 @@ if ($ocena >= 90) {
     echo "<br>";
 }
 echo "<br>";
-echo "swich: <br>";
+echo "Switch:";
+echo "<br>";
 $marka = "audi";
 
 switch ($marka) {
     case "audi":
-        echo "Twój samochod jest marki audi";
+        echo "Twój samochód jest marki audi";
         break;
     case "bmw":
-        echo "Twój samochod jest marki bmw";
+        echo "Twój samochód jest marki bmw";
         break;
     default:
-        echo "Twój samochod jest marki innej niz znam";
+        echo "Twój samochód jest marki innej niż znam";
 }
-echo "<br>";
-echo "<br>";
+echo "<br><br>";
+
 echo "c) Pętla while() i for():";
 echo "<br>";
 
@@ -66,8 +82,11 @@ echo "Pętla for: ";
 for ($j = 1; $j <= 5; $j++) {
     echo $j . " ";
 }
+echo "<br><br>";
+
+echo "d) Zmienne \$_GET, \$_POST, \$_SESSION:";
 echo "<br>";
-echo "<br>";
+
 echo "Przykład korzystania z \$_GET:";
 echo "<br>";
 if (isset($_GET['name'])) {
@@ -78,14 +97,16 @@ if (isset($_GET['name'])) {
     echo "<br>";
 }
 echo "<br>";
+
 echo "Przykład korzystania z \$_POST:";
 echo "<br>";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['email'])) {
-        echo "Podany email " . htmlspecialchars($_POST['email']);
+        echo "Podany email: " . htmlspecialchars($_POST['email']);
+        echo "<br>";
     }
 }
-echo "<br>";
+
 echo "Przykład korzystania z \$_SESSION:";
 echo "<br>";
 session_start();
