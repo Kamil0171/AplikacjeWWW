@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-
 <head>
-	<meta charset="utf-8"/>
-	<meta content="pl" name="Content-Language"/>
-	<meta content="Kamil Amarasekara" name="Author"/>
-	<title>Największe budynki świata</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="../js/kolorujtlo.js" type="text/javascript"></script>
-	<script src="../js/timedate.js" type="text/javascript"></script>
+    <title>Największe budynki świata</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="js/kolorujtlo.js" type="text/javascript"></script>
+    <script src="js/timedate.js" type="text/javascript"></script>
+    <script src="js/animations.js" type="text/javascript"></script>
 </head>
-
 <header>
-	<h1>Największe budynki świata</h1>
-<nav>
-<ul>
-	<li><a href="glowna.html">Strona główna</a></li>
-	<li><a href="burjkhalifa.html">Burj Khalifa</a></li>
-	<li><a href="shanghaitower.html">Shanghai Tower</a></li>
-	<li><a href="abradzalbajt.html">Abradż al-Bajt</a></li>
-	<li><a href="pinganfinancecenter.html">Ping An Finance Center</a></li>
-	<li><a href="filmy.html">Filmy</a></li>	
-	<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
-</nav>
+    <h1>Największe budynki świata</h1>
+    <nav>
+        <ul>
+            <li><a href="index.php?idp=glowna">Strona główna</a></li>
+            <li><a href="index.php?idp=burjkhalifa">Burj Khalifa</a></li>
+            <li><a href="index.php?idp=shanghaitower">Shanghai Tower</a></li>
+            <li><a href="index.php?idp=abradzalbajt">Abradż al-Bajt</a></li>
+            <li><a href="index.php?idp=pinganfinancecenter">Ping An Finance Center</a></li>
+            <li><a href="index.php?idp=filmy">Filmy</a></li>
+            <li><a href="index.php?idp=kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
 
-	<div class="time-date">
-	<div id="zegarek"></div>
-	<div id="data"></div>
-</div>
+    <div class="time-date">
+        <div id="zegarek"></div>
+        <div id="data"></div>
+    </div>
 
-	<div class="background-options">
-	<input onclick="changeBackground('#808080')" type="button" value="Szary"/>
-	<input onclick="changeBackground('#FFFFFF')" type="button" value="Biały"/>
-</div>
+    <div class="background-options">
+        <input type="button" value="Szary" onclick="changeBackground('#808080')">
+        <input type="button" value="Biały" onclick="changeBackground('#FFFFFF')">
+    </div>
 </header>
 
 <section>
-	<p>Oto 4 najwyższe budynki na świecie</p>
-<ul class="buildings-list">
-	<li>Burj Khalifa</li>
-	<li>Shanghai Tower</li>
-	<li>Abradż al-Bajt</li>
-	<li>Ping An Finance Center</li>
-</ul>
+    <p>Oto 4 najwyższe budynki na świecie</p>
+    <ul class="buildings-list">
+        <li>Burj Khalifa</li>
+        <li>Shanghai Tower</li>
+        <li>Abradż al-Bajt</li>
+        <li>Ping An Finance Center</li>
+    </ul>
 
-	<div class="gallery gallery-home">
-	<img alt="Zdjęcie budynku 1" class="gallery-img" id="animacjaImg1" src="../img/bud1.jpg"/>
-	<img alt="Zdjęcie budynku 2" class="gallery-img" id="animacjaImg2" src="../img/bud2.jpg"/>
-</div>
+    <div class="gallery gallery-home">
+        <div class="image-container2">
+            <img src="img/bud1.jpg" class="gallery-img" alt="">
+        </div>
+        <div class="image-container2">
+            <img src="img/bud2.jpg" class="gallery-img" alt="">
+        </div>
+    </div>
 </section>
 
-<footer>
-<p>Kamil Amarasekara ISI1, 169222</p>
-</footer>
 
-<script>
 
-        $("#animacjaImg1").on("click", function(){
-            $(this).animate({
-                width: "500px",
-                opacity: 0.6
-            }, 1500);
-        });
 
-        $("#animacjaImg2").on({
-            "mouseover": function(){
-                $(this).animate({ width: "300px" }, 800);
-            },
-            "mouseout": function(){
-                $(this).animate({ width: "200px" }, 800);
-            }
-        });
-    </script>
-<html>
