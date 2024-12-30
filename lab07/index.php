@@ -58,13 +58,12 @@ switch ($idp) {
                 $nrGrupy = '1';
                 echo 'Autor: Kamil Amarasekara ' . $nr_indeksu . ' grupa ' . $nrGrupy . '<br /><br />';
             ?>
-        </footer>
-
         <div style="position: absolute; bottom: 20px; left: 20px;">
             <a href="admin" class="button" style="padding: 10px 20px; background-color: black; color: white; text-decoration: none; border-radius: 5px;">
                 Admin
             </a>
         </div>
+        </footer>
     </div>
 </body>
 </html>
