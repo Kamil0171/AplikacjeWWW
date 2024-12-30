@@ -1,33 +1,34 @@
-var computed = false;
-var decimal = 0;
-
-function convert(entryform, from, to) {
-    convertfrom = from.selectedIndex;
-    convertto = to.selectedIndex;
-    entryfrom.display.value = (entryfrom.input.value * from[convertfrom].value / to[convertto].value);
+function gettheDate() {
+    var today = new Date();
+    var day = String(today.getDate()).padStart(2, '0');
+    var month = String(today.getMonth() + 1).padStart(2, '0');
+    var year = today.getFullYear();
+    var formattedDate = day + "." + month + "." + year;
+    document.getElementById("data").innerHTML = formattedDate;
 }
 
-function addChar(input, character) {
-    if ((character == '.' && decimal == "0" || character != '.')) {
-        (input.value == "" || input.value == "0") ? input.value = character : input.value += character;
-        convert(input.form, input.form.measure1, input.form.measure2);
-        computed = true;
-        if (character == '.') {
-            decimal = 1;
-        }
-    }
+var timerID = null;
+var timerRunning = false;
+
+function stopclock() {
+    if (timerRunning)
+        clearTimeout(timerID);
+    timerRunning = false;
 }
 
-function openVothcom() {
-    window.open("", "Display window", "toolbar=no,directories=no,menubar=no");
+function startclock() {
+    stopclock();
+    gettheDate();
+    showtime();
 }
 
-function clear(form) {
-    form.input.value = 0;
-    form.display.value = 0;
-    decimal = 0;
-}
-
-function changeBackground(bc) {
-    document.body.style.backgroundColor = bc;
+function showtime() {
+    var now = new Date();
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var seconds = String(now.getSeconds()).padStart(2, '0');
+    var timevalue = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("zegarek").innerHTML = timevalue;
+    timerID = setTimeout("showtime()", 1000);
+    timerRunning = true;
 }

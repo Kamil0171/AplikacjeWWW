@@ -1,12 +1,11 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'moja_strona';
 
-$link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$conn = mysqli_connect("localhost", "root", "", "moja_strona");
+$login = 'admin';
+$pass = '169222';
 
-if (!$link) {
-    die('Connection failed: ' . mysqli_connect_error());
+if (!$conn) {
+    die("Błąd połączenia: " . mysqli_connect_error());
 }
+
 ?>

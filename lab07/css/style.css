@@ -3,6 +3,9 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -41,14 +44,6 @@ nav ul li a:hover {
     color: white;
 }
 
-#zegarek {
-    font-size: 18px;
-}
-
-#data {
-    font-size: 14px;
-}
-
 .background-options {
     position: absolute;
     top: 10px;
@@ -58,6 +53,50 @@ nav ul li a:hover {
 section {
     padding: 20px;
     text-align: center;
+    flex: 1;
+}
+
+ul.buildings-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+}
+
+.image-container2 {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease-out;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1);
 }
 
 footer {
@@ -65,50 +104,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.gallery-home {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.gallery-img {
-    width: 300px;
-    height: auto;
-    margin: 15px 0;
-}
-
-.buildings-list {
-    text-align: left;
-    display: inline-block;
-    padding-left: 20px;
-}
-
-.test-block {
-    width: 200px;
-    border: 2px solid rgba(71,236,30,1);
-    background: rgba(71,236,30,0.7);
-    text-align: center;
-    color: #f00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    padding: 20px;
-    margin: 20px auto;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
