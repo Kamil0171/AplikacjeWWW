@@ -1,101 +1,81 @@
 <?php
+// Ustawienie raportowania błędów, ukrywając powiadomienia i ostrzeżenia
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
-if(htmlspecialchars($_GET['idp'] == 'filmy') $strona = '/lab05/html/filmy.html';
+// Sprawdzanie, czy parametr 'idp' jest ustawiony w zapytaniu URL, domyślnie ustawiamy na 'glowna'
+$idp = isset($_GET['idp']) ? $_GET['idp'] : 'glowna';
 
-if(empty(htmlspecialchars($_GET['idp'])) $strona = '/lab05/html/glowna.html';
-if(htmlspecialchars($_GET['idp'] == 'podstrona1') $strona = '/lab05/html/abradzalbajt.html';
-if(htmlspecialchars($_GET['idp'] == 'podstrona2') $strona = '/lab05/html/burjkhalifa.html';
+// Dołączenie plików konfiguracyjnych oraz obsługi strony
+include('cfg.php');
+include('showpage.php');
 
-if (file_exists(__DIR__ . $strona)) {
-    include(__DIR__ . $strona);
-} else {
-    echo 'Requested page not found.';
+// Instrukcja switch do obsługi różnych stron na podstawie wartości 'idp' z zapytania URL
+switch ($idp) {
+    case 'abradzalbajt':
+        $strona = 'html/abradzalbajt.html';
+        break;
+    case 'burjkhalifa':
+        $strona = 'html/burjkhalifa.html';
+        break;
+    case 'kontakt':
+        $strona = 'html/kontakt.html';
+        break;
+    case 'pinganfinancecenter':
+        $strona = 'html/pinganfinancecenter.html';
+        break;
+    case 'shanghaitower':
+        $strona = 'html/shanghaitower.html';
+        break;
+    case 'filmy':
+        $strona = 'html/filmy.html';
+        break;
+    case 'glowna':
+    default:
+        $strona = 'html/glowna.html';
+        break;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="Content-Language" content="pl">
-    <meta name="Author" content="Kamil Amarasekara">
-    <title>Największe budynki świata</title>
+    <!-- Metatagi do ustawienia języka i kodowania znaków -->
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="pl"/>
+    <meta name="Author" content="Kamil Amarasekara"/>
+
+    <!-- Link do zewnętrznego pliku stylu -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/kolorujtlo.js" type="text/javascript"></script>
-    <script src="js/timedate.js" type="text/javascript"></script>
 </head>
-<body onload="startclock()">
-    <header>
-        <h1>Największe budynki świata</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Strona główna</a></li>
-                <li><a href="index.php?idp=podstrona2">Burj Khalifa</a></li>
-                <li><a href="html/shanghaitower.html">Shanghai Tower</a></li>
-                <li><a href="index.php?idp=podstrona1">Abradż al-Bajt</a></li>
-                <li><a href="index.php?idp=pinganfinancecenter">Ping An Finance Center</a></li>
-				<li><a href="index.php?idp=filmy">Filmy</a></li>
-                <li><a href="html/kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <div class="time-date">
-            <div id="zegarek"></div>
-            <div id="data"></div>
-        </div>
-
-        <div class="background-options">
-            <INPUT TYPE="button" VALUE="Szary" ONCLICK="changeBackground('#808080')">
-            <INPUT TYPE="button" VALUE="Biały" ONCLICK="changeBackground('#FFFFFF')">
-        </div>
-    </header>
-
-    <section>
-        <p>Oto 4 najwyższe budynki na świecie</p>
-        <ul class="buildings-list">
-            <li>Burj Khalifa</li>
-            <li>Shanghai Tower</li>
-            <li>Abradż al-Bajt</li>
-            <li>Ping An Finance Center</li>
-        </ul>
-
-        <div class="gallery gallery-home">
-            <img src="img/bud1.jpg" class="gallery-img" id="animacjaImg1" alt="Zdjęcie budynku 1">
-            <img src="img/bud2.jpg" class="gallery-img" id="animacjaImg2" alt="Zdjęcie budynku 2">
-        </div>
-    </section>
-    
-    <footer>
-        <p>Kamil Amarasekara ISI1, 169222</p>
-    </footer>
-
-    <script>
-
-        $("#animacjaImg1").on("click", function(){
-            $(this).animate({
-                width: "500px",
-                opacity: 0.6
-            }, 1500);
-        });
-
-        $("#animacjaImg2").on({
-            "mouseover": function(){
-                $(this).animate({ width: "300px" }, 800);
-            },
-            "mouseout": function(){
-                $(this).animate({ width: "200px" }, 800);
+<body onload="startclock()"> <!-- Wywołanie funkcji JavaScript 'startclock' podczas ładowania strony -->
+    <div class="content-wrapper" style="min-height: 100vh; display: flex; flex-direction: column;">
+        <!-- Główny kontener treści z elastycznym układem -->
+        <div class="content" style="flex-grow: 1;">
+            <?php
+            // Sprawdzenie, czy wybrana strona istnieje i jej dołączenie
+            if (file_exists($strona)) {
+                include($strona);
+            } else {
+                // Jeśli strona nie istnieje, wyświetl komunikat o błędzie
+                echo 'Strona nie została znaleziona.';
             }
-        });
-    </script>
+            ?>
+        </div>
 
-
-<?php
-$nr_indeksu = '169222';
-$nrGrupy = '1';
-echo 'Autor: Kamil Amarasekara ' . $nr_indeksu . ' grupa ' . $nrGrupy . '<br />';
-?>
-
+        <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;">
+            <?php
+            // Wyświetlenie informacji o autorze w stopce
+            $nr_indeksu = '169222';
+            $nrGrupy = '1';
+            echo 'Autor: Kamil Amarasekara ' . $nr_indeksu . ' grupa ' . $nrGrupy . '<br /><br />';
+            ?>
+            <!-- Przycisk do panelu administracyjnego -->
+            <div style="position: absolute; bottom: 20px; left: 20px;">
+                <a href="./admin/admin.php" class="button" style="padding: 10px 20px; background-color: black; color: white; text-decoration: none; border-radius: 5px;">
+                    Admin
+                </a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
