@@ -1,33 +1,40 @@
-var computed = false;
-var decimal = 0;
-
-function convert(entryform, from, to) {
-    convertfrom = from.selectedIndex;
-    convertto = to.selectedIndex;
-    entryfrom.display.value = (entryfrom.input.value * from[convertfrom].value / to[convertto].value);
+// Funkcja do pobierania aktualnej daty i jej formatowania
+function gettheDate() {
+    var today = new Date();  // Tworzymy obiekt reprezentujący bieżącą datę i godzinę
+    var day = String(today.getDate()).padStart(2, '0');  // Pobieramy dzień i formatujemy go na 2 cyfry
+    var month = String(today.getMonth() + 1).padStart(2, '0');  // Pobieramy miesiąc i formatujemy go na 2 cyfry
+    var year = today.getFullYear();  // Pobieramy rok
+    var formattedDate = day + "." + month + "." + year;  // Łączymy dzień, miesiąc i rok w odpowiedni format
+    document.getElementById("data").innerHTML = formattedDate;  // Wyświetlamy sformatowaną datę w elemencie o id "data"
 }
 
-function addChar(input, character) {
-    if ((character == '.' && decimal == "0" || character != '.')) {
-        (input.value == "" || input.value == "0") ? input.value = character : input.value += character;
-        convert(input.form, input.form.measure1, input.form.measure2);
-        computed = true;
-        if (character == '.') {
-            decimal = 1;
-        }
-    }
+// Zmienna do przechowywania identyfikatora timera
+var timerID = null;
+// Zmienna do sprawdzania, czy zegar jest uruchomiony
+var timerRunning = false;
+
+// Funkcja do zatrzymania zegara
+function stopclock() {
+    if (timerRunning)
+        clearTimeout(timerID);  // Zatrzymanie timera, jeśli zegar jest uruchomiony
+    timerRunning = false;  // Ustawienie statusu zegara na zatrzymany
 }
 
-function openVothcom() {
-    window.open("", "Display window", "toolbar=no,directories=no,menubar=no");
+// Funkcja do rozpoczęcia zegara
+function startclock() {
+    stopclock();  // Zatrzymanie zegara przed rozpoczęciem nowego
+    gettheDate();  // Pobranie i wyświetlenie bieżącej daty
+    showtime();  // Rozpoczęcie pokazywania godziny
 }
 
-function clear(form) {
-    form.input.value = 0;
-    form.display.value = 0;
-    decimal = 0;
-}
-
-function changeBackground(bc) {
-    document.body.style.backgroundColor = bc;
+// Funkcja do wyświetlania aktualnej godziny
+function showtime() {
+    var now = new Date();  // Tworzymy obiekt reprezentujący bieżącą datę i godzinę
+    var hours = String(now.getHours()).padStart(2, '0');  // Pobieramy godziny i formatujemy je na 2 cyfry
+    var minutes = String(now.getMinutes()).padStart(2, '0');  // Pobieramy minuty i formatujemy je na 2 cyfry
+    var seconds = String(now.getSeconds()).padStart(2, '0');  // Pobieramy sekundy i formatujemy je na 2 cyfry
+    var timevalue = hours + ":" + minutes + ":" + seconds;  // Łączymy godziny, minuty i sekundy w jeden ciąg
+    document.getElementById("zegarek").innerHTML = timevalue;  // Wyświetlamy czas w elemencie o id "zegarek"
+    timerID = setTimeout("showtime()", 1000);  // Ustawiamy timer do ponownego wywołania funkcji za 1 sekundę
+    timerRunning = true;  // Ustawiamy status zegara na uruchomiony
 }
