@@ -1,0 +1,126 @@
+/* Ustawienia ogólne dla całej strony */
+body {
+    font-family: Arial, sans-serif;  /* Ustawienie czcionki */
+    background-color: #f4f4f4;  /* Kolor tła strony */
+    margin: 0;  /* Usunięcie marginesów */
+    padding: 0;  /* Usunięcie paddingu */
+    display: flex;  /* Ustawienie elastycznego układu */
+    flex-direction: column;  /* Ustawienie kierunku układu na kolumny */
+    min-height: 100vh;  /* Minimalna wysokość strony to 100% wysokości widocznej części */
+}
+
+/* Styl dla nagłówka */
+header {
+    background-color: #333;  /* Kolor tła nagłówka */
+    color: white;  /* Kolor tekstu w nagłówku */
+    padding: 10px 0;  /* Padding wewnętrzny nagłówka */
+    text-align: center;  /* Wyrównanie tekstu do środka */
+    position: relative;  /* Ustawienie pozycji nagłówka */
+}
+
+/* Styl dla nawigacji */
+nav ul {
+    list-style-type: none;  /* Usunięcie punktów listy */
+    margin: 0;  /* Usunięcie marginesu */
+    padding: 0;  /* Usunięcie paddingu */
+}
+
+/* Styl dla elementów listy w nawigacji */
+nav ul li {
+    display: inline;  /* Wyświetlanie elementów listy w linii */
+    margin-right: 10px;  /* Odstęp między elementami */
+}
+
+/* Styl dla linków w nawigacji */
+nav ul li a {
+    color: white;  /* Kolor tekstu linków */
+    text-decoration: none;  /* Usunięcie podkreślenia */
+}
+
+/* Styl dla linków w nawigacji po najechaniu */
+nav ul li a:hover {
+    text-decoration: underline;  /* Podkreślenie linków po najechaniu */
+}
+
+/* Styl dla sekcji wyświetlającej datę i zegar */
+.time-date {
+    position: absolute;  /* Ustawienie pozycji na stronie */
+    top: 10px;  /* Ustawienie odległości od góry */
+    right: 20px;  /* Ustawienie odległości od prawej */
+    text-align: right;  /* Wyrównanie tekstu do prawej */
+    color: white;  /* Kolor tekstu */
+}
+
+/* Styl dla opcji zmiany tła */
+.background-options {
+    position: absolute;  /* Ustawienie pozycji na stronie */
+    top: 10px;  /* Ustawienie odległości od góry */
+    left: 20px;  /* Ustawienie odległości od lewej */
+}
+
+/* Styl dla sekcji strony */
+section {
+    padding: 20px;  /* Padding wewnętrzny sekcji */
+    text-align: center;  /* Wyrównanie tekstu do środka */
+    flex: 1;  /* Ustawienie elastyczności sekcji */
+}
+
+/* Styl dla listy budynków */
+ul.buildings-list {
+    list-style-type: none;  /* Usunięcie punktów listy */
+    padding: 0;  /* Usunięcie paddingu */
+    margin: 0;  /* Usunięcie marginesu */
+    text-align: center;  /* Wyrównanie tekstu do środka */
+}
+
+/* Styl dla galerii zdjęć */
+.gallery {
+    display: flex;  /* Ustawienie elastycznego układu */
+    flex-wrap: wrap;  /* Umożliwienie zawijania elementów */
+    justify-content: center;  /* Wyrównanie elementów w poziomie */
+    align-items: center;  /* Wyrównanie elementów w pionie */
+    gap: 20px;  /* Odstęp między elementami */
+    padding: 20px;  /* Padding wewnętrzny galerii */
+}
+
+/* Styl dla kontenerów zdjęć */
+.image-container {
+    width: 200px;  /* Szerokość kontenera */
+    height: 200px;  /* Wysokość kontenera */
+    overflow: hidden;  /* Ukrywanie nadmiaru zdjęć */
+    position: relative;  /* Ustawienie pozycji kontenera */
+    border-radius: 8px;  /* Zaokrąglenie rogów */
+}
+
+/* Styl dla drugiego typu kontenera zdjęć (jeśli istnieje) */
+.image-container2 {
+    width: 200px;  /* Szerokość kontenera */
+    height: 200px;  /* Wysokość kontenera */
+    overflow: hidden;  /* Ukrywanie nadmiaru zdjęć */
+    position: relative;  /* Ustawienie pozycji kontenera */
+    border-radius: 8px;  /* Zaokrąglenie rogów */
+}
+
+/* Styl dla zdjęć w galerii */
+.gallery-img {
+    width: 100%;  /* Szerokość zdjęcia wypełnia cały kontener */
+    height: 100%;  /* Wysokość zdjęcia wypełnia cały kontener */
+    object-fit: cover;  /* Przycięcie zdjęcia do rozmiarów kontenera */
+    transition: transform 0.7s ease-out;  /* Płynna animacja powiększenia zdjęcia */
+}
+
+/* Styl dla zdjęć po najechaniu */
+.gallery-img:hover {
+    transform: scale(1.1);  /* Powiększenie zdjęcia */
+}
+
+/* Styl dla stopki */
+footer {
+    background-color: #333;  /* Kolor tła stopki */
+    color: white;  /* Kolor tekstu w stopce */
+    text-align: center;  /* Wyrównanie tekstu do środka */
+    padding: 10px 0;  /* Padding wewnętrzny stopki */
+    position: relative;  /* Ustawienie pozycji stopki */
+    bottom: 0;  /* Ustawienie odległości od dołu strony */
+    width: 100%;  /* Szerokość stopki na 100% */
+}
