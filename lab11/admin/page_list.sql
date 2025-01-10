@@ -18,10 +18,6 @@ VALUES
     ('Informacje', 0),
     ('Filmy', 0);
 
--- Dodawanie indeksów dla tabeli 'categories'
-ALTER TABLE categories
-  ADD PRIMARY KEY (id);
-
 -- AUTO_INCREMENT dla tabeli 'categories'
 ALTER TABLE categories
   MODIFY id INT AUTO_INCREMENT, AUTO_INCREMENT=4;
@@ -44,7 +40,7 @@ VALUES
     ('Burj Khalifa', 'Zawartość strony Burj Khalifa', 1, 'burjkhalifa', 1),  -- Przypisanie do kategorii "Wieżowce" (ID 1)
     ('Kontakt', 'Zawartość strony Kontakt', 1, 'kontakt', 2),         -- Przypisanie do kategorii "Informacje" (ID 2)
     ('Filmy', 'Zawartość strony Filmy', 1, 'filmy', 3),               -- Przypisanie do kategorii "Filmy" (ID 3)
-    ('Abradzalbajt', 'Zawartość strony Abradzalbajt', 1, 'abradzalbajt', 1), -- Przypisanie do kategorii "Wieżowce" (ID 1)
+    ('Abradzalbajt', 'Zawartość strony Abradzalbajt', 1, 'abradzalbajt', 1), -- Przypisanie do k2ategorii "Wieżowce" (ID 1)
     ('Shanghai Tower', 'Zawartość strony Shanghai Tower', 1, 'shanghaitower', 1), -- Przypisanie do kategorii "Wieżowce" (ID 1)
     ('Ping An Finance Center', 'Zawartość strony Ping An Finance Center', 1, 'pinganfinancecenter', 1);  -- Przypisanie do kategorii "Wieżowce" (ID 1)
 
