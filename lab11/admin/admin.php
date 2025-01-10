@@ -161,7 +161,7 @@ function UsunPodstrone()
     }
 
     // Zapytanie do bazy danych w celu usunięcia podstrony
-    $query = "DELETE FROM x WHERE id = $id LIMIT 1";
+    $query = "DELETE FROM page_list WHERE id = $id LIMIT 1";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
@@ -308,7 +308,7 @@ function UsunKategorie()
 function ZarzadzajProduktami()
 {
     echo "<h3>Zarządzaj produktami</h3>";
-    echo '<a href="?action=dodaj_produkt">Dodaj produkt</a><br />';
+    echo '<a href="'.$_SERVER['PHP_SELF'].'?action=dodaj_produkt">Dodaj produkt</a><br />';
     PokazProdukty();
 
     echo '<br><a href="admin.php"><button>Powrót</button></a>';
@@ -317,7 +317,7 @@ function ZarzadzajProduktami()
 // Funkcja dodająca produkt
 function DodajProdukt()
 {
-    global $confn;
+    global $conn;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $tytul = mysqli_real_escape_string($conn, $_POST['tytul']);
