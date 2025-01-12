@@ -1,0 +1,209 @@
+/* Resetowanie domyślnych ustawień marginesów, paddingów i box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stylowanie elementu body */
+body {
+    font-family: 'Arial', sans-serif;  /* Ustawienie czcionki */
+    background-color: #f4f4f9;  /* Kolor tła */
+    display: flex;
+    justify-content: center;  /* Wyśrodkowanie kontenera */
+    align-items: flex-start;  /* Ustawienie na górze */
+    height: 100vh;  /* Wysokość całego okna przeglądarki */
+    margin: 0;
+    padding: 20px;  /* Dodanie przestrzeni wokół */
+}
+
+/* Stylowanie głównego kontenera */
+.main {
+    background-color: white;  /* Tło białe */
+    padding: 20px;  /* Odstępy wewnętrzne */
+    border-radius: 10px;  /* Zaokrąglenie rogów */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Cień */
+    width: 100%;
+    max-width: 1000px;  /* Maksymalna szerokość */
+    text-align: center;  /* Wyśrodkowanie tekstu */
+}
+
+/* Nagłówek główny */
+.heading {
+    font-size: 1.8em;  /* Rozmiar czcionki */
+    color: #333333;  /* Kolor tekstu */
+    margin-bottom: 30px;  /* Odstęp od dolnej krawędzi */
+}
+
+/* Linki */
+a {
+    color: #6c757d;  /* Kolor linków */
+    text-decoration: none;  /* Brak podkreślenia */
+    font-size: 1em;
+}
+
+/* Formularz logowania */
+.formularz_logowania {
+    width: 100%;  /* Szerokość formularza */
+}
+
+/* Pola formularza */
+.logowanie {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+/* Przycisk submit w formularzu */
+input[type="submit"] {
+    background-color: #333;  /* Kolor tła */
+    color: white;  /* Kolor tekstu */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;  /* Szerokość przycisku */
+}
+
+/* Efekt hover dla przycisku submit */
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Komunikat o błędzie */
+.error-message {
+    color: #ff3d3d;  /* Kolor czerwony */
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Tabela akcji */
+.tabela_akcji {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap: break-word;  /* Zawijanie tekstu w komórkach */
+}
+
+/* Stylowanie komórek tabeli */
+.tabela_akcji th, .tabela_akcji td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Stylowanie nagłówków tabeli */
+.tabela_akcji th {
+    background-color: #f1f1f1;  /* Kolor tła nagłówka */
+    font-weight: bold;
+}
+
+/* Stylowanie komórek tabeli */
+.tabela_akcji td {
+    background-color: #fafafa;
+}
+
+/* Stylowanie linków w tabeli */
+.tabela_akcji a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Efekt hover dla linków w tabeli */
+.tabela_akcji a:hover {
+    text-decoration: underline;
+}
+
+/* Dodanie marginesu do linków */
+.tabela_akcji td a {
+    margin-right: 10px;
+}
+
+/* Stylowanie tabeli */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* Stylowanie komórek w tabelach */
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Stylowanie nagłówków tabeli */
+table th {
+    background-color: #f1f1f1;  /* Kolor tła nagłówka */
+    font-weight: bold;
+}
+
+/* Stylowanie komórek tabeli */
+table td {
+    background-color: #fafafa;
+}
+
+/* Stylowanie textarea */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    resize: vertical;  /* Pozwolenie na zmianę rozmiaru */
+}
+
+/* Stylowanie pól tekstowych */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+/* Stylowanie przycisku zapisz */
+input[type="submit"].zapisz {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* Efekt hover dla przycisku zapisz */
+input[type="submit"].zapisz:hover {
+    background-color: #333;
+}
+
+/* Stylowanie przycisków */
+button {
+    margin-top: 20px;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efekt hover dla przycisków */
+button:hover {
+    background-color: #5a6268;
+}
+
+/* Stylowanie formularzy */
+form {
+    margin-bottom: 30px;
+}

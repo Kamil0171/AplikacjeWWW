@@ -1,0 +1,158 @@
+/* Stylowanie elementu body */
+body {
+    font-family: Arial, sans-serif;  /* Ustawienie czcionki */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;  /* Kolor tła */
+}
+
+/* Nagłówek strony */
+header {
+    background-color: #333;  /* Kolor tła nagłówka */
+    color: white;  /* Kolor tekstu */
+    padding: 10px;
+    text-align: center;  /* Wyśrodkowanie tekstu */
+}
+
+/* Nagłówek h1 */
+h1 {
+    margin: 0;  /* Usunięcie marginesu */
+}
+
+/* Nagłówek h2 */
+h2 {
+    text-align: center;  /* Wyśrodkowanie tekstu */
+    margin-bottom: 20px;  /* Odstęp od dolnej krawędzi */
+}
+
+/* Kontener na produkty */
+.produkty-container {
+    display: flex;
+    flex-wrap: wrap;  /* Umożliwia zawijanie produktów */
+    gap: 20px;  /* Odstępy między produktami */
+    justify-content: space-around;  /* Rozmieszczenie produktów */
+    padding: 20px;  /* Odstępy wewnętrzne */
+}
+
+/* Stylowanie pojedynczego produktu */
+.produkt {
+    background-color: #fff;  /* Tło białe */
+    border: 1px solid #ddd;  /* Kolor ramki */
+    padding: 15px;
+    width: 30%;  /* Szerokość produktu */
+    box-sizing: border-box;  /* Wliczanie paddingu do szerokości */
+    text-align: center;  /* Wyśrodkowanie tekstu */
+    margin: 10px 0;  /* Odstęp góra/dół */
+    border-radius: 8px;  /* Zaokrąglenie rogów */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Cień */
+}
+
+/* Stylowanie obrazka produktu */
+.produkt img {
+    max-width: 100%;  /* Maksymalna szerokość obrazka */
+    height: auto;  /* Automatyczna wysokość */
+    object-fit: cover;  /* Dopasowanie obrazu */
+    border-radius: 5px;  /* Zaokrąglenie rogów obrazka */
+}
+
+/* Formularz w sekcji produktu */
+.produkt form {
+    margin-top: 10px;  /* Odstęp od góry */
+}
+
+/* Stylowanie przycisku */
+.button {
+    padding: 10px 20px;
+    background-color: black;  /* Kolor tła */
+    color: white;  /* Kolor tekstu */
+    text-decoration: none;  /* Brak podkreślenia */
+    border-radius: 5px;  /* Zaokrąglenie rogów */
+}
+
+/* Tabela z produktami w koszyku */
+table {
+    width: 100%;  /* Szerokość tabeli */
+    margin-top: 20px;  /* Odstęp od góry */
+    border-collapse: collapse;  /* Łączenie ramek tabeli */
+}
+
+/* Stylowanie komórek tabeli */
+table th, table td {
+    border: 1px solid #ddd;  /* Kolor ramek */
+    padding: 10px;
+    text-align: center;  /* Wyśrodkowanie tekstu */
+}
+
+/* Stylowanie przycisku usuwania w tabeli */
+.usun-btn {
+    color: red;  /* Kolor czerwony */
+    text-decoration: none;  /* Brak podkreślenia */
+}
+
+/* Stylowanie komunikatu o błędzie */
+.error-message {
+    background-color: indianred;  /* Kolor tła */
+    color: white;  /* Kolor tekstu */
+    padding: 10px;
+    margin-top: 20px;  /* Odstęp od góry */
+    border-radius: 5px;  /* Zaokrąglenie rogów */
+    text-align: center;  /* Wyśrodkowanie tekstu */
+}
+
+/* Komunikat, gdy koszyk jest pusty */
+.empty-cart-message {
+    text-align: center;  /* Wyśrodkowanie tekstu */
+    font-size: 18px;  /* Rozmiar czcionki */
+    color: #333;  /* Kolor tekstu */
+    margin-top: 50px;  /* Odstęp od góry */
+}
+
+/* Stylowanie kontenera płatności */
+.payment-container {
+    display: flex;
+    justify-content: center;  /* Wyśrodkowanie */
+    align-items: center;  /* Wyśrodkowanie */
+    height: 100vh;  /* Wysokość pełnego ekranu */
+    background-color: #f4f4f4;  /* Kolor tła */
+}
+
+/* Stylowanie komunikatu płatności */
+.payment-message {
+    text-align: center;  /* Wyśrodkowanie tekstu */
+    background-color: #4CAF50;  /* Kolor tła */
+    color: white;  /* Kolor tekstu */
+    padding: 20px;
+    border-radius: 8px;  /* Zaokrąglenie rogów */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Cień */
+    width: 50%;  /* Szerokość kontenera */
+    font-family: Arial, sans-serif;  /* Czcionka */
+}
+
+/* Stylowanie nagłówka w komunikacie płatności */
+.payment-message h1 {
+    font-size: 36px;  /* Rozmiar czcionki */
+    margin-bottom: 10px;  /* Odstęp od dołu */
+}
+
+/* Stylowanie akapitu w komunikacie płatności */
+.payment-message p {
+    font-size: 18px;  /* Rozmiar czcionki */
+}
+
+/* Stylowanie przycisku w komunikacie płatności */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;  /* Kolor tła */
+    color: white;  /* Kolor tekstu */
+    text-decoration: none;  /* Brak podkreślenia */
+    border-radius: 5px;  /* Zaokrąglenie rogów */
+    margin-top: 20px;  /* Odstęp od góry */
+    font-size: 18px;  /* Rozmiar czcionki */
+    text-align: center;  /* Wyśrodkowanie tekstu */
+}
+
+/* Efekt hover dla przycisku w komunikacie płatności */
+.button:hover {
+    background-color: #333;  /* Zmiana koloru tła po najechaniu */
+}
